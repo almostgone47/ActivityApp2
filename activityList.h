@@ -24,6 +24,7 @@ public:
     void searchActivitiesByType();
     void searchActivitiesByName();
     void loadData(std::ifstream &inFile);
+    void removeActivity();
 //
 //    void incNumActivities();
 //    void searchActivitiesByName(const Activity activities[], int numActivities);

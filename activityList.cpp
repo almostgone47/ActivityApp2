@@ -30,10 +30,6 @@ int ActivityList::getNumActivities() {
     return size;
 }
 
-//void ActivityList::incNumActivities() {
-//    size = size + 1;
-//}
-
 //Name:   addActivity()
 //Desc:   Adds ref to newly created activity to array of all activities in memory.
 //input:  array holding all activities currently in memory, number of activities in memory,
@@ -72,13 +68,19 @@ void ActivityList::searchActivitiesByLocation() {
     cin.get(searchLocation, MAXCHAR, '\n');
     cout << endl;
 
+    bool activityFound = false;
     for(int i = 0; i < size; i++)
     {
         list[i].getLocation(tempLocation);
         if(strstr(searchLocation, tempLocation) != NULL)
         {
+            activityFound = true;
             list[i].printActivity();
         }
+    }
+
+    if (!activityFound) {
+        cout << "Activity not found!! " << endl;
     }
 }
 
@@ -94,15 +96,73 @@ void ActivityList::searchActivitiesByType() {
     cout << "Enter Type number(0-Athletic, 1-Food, 2-Arts, 3-Games, 4-Other): ";
     cin >> letter;
 
+    bool activityFound = false;
     tempType = readType(letter);
     for(int i = 0; i < size; i++)
     {
         Activity::Type type = list[i].getType();
         if(type == tempType)
         {
+            activityFound = true;
             list[i].printActivity();
         }
     }
+
+    if (!activityFound) {
+        cout << "Activity not found!! " << endl;
+    }
+}
+
+//Name:   searchActivitiesByName()
+//Desc:   Asks user for name of activity to search for and prints all activities that match
+//        the input string.
+//input:  array holding all activities currently in memory, number of activities in memory
+//output: All activities matching search.
+//return: none
+void ActivityList::searchActivitiesByName() {
+    char searchName[MAXCHAR];
+    char activityName[MAXCHAR];
+    cout << "Enter the activity name (50 characters or less): ";
+    cin.get(searchName, MAXCHAR, '\n');
+    cout << endl;
+
+    bool activityFound = false;
+    for(int i = 0; i < size; i++)
+    {
+        list[i].getName(activityName);
+        if(strstr(searchName, activityName) != NULL)
+        {
+            activityFound = true;
+            list[i].printActivity();
+        }
+    }
+
+    if (!activityFound) {
+        cout << "Activity not found!! " << endl;
+    }
+}
+
+//Name:   removeActivity()
+//Desc:   Removes activity from all activities in array stored in memory.
+//input:  array holding all activities currently in memory, number of activities in memory
+//output: none
+//return: none
+void ActivityList::removeActivity() {
+    int index;
+    cout << "Pick the index to remove: ";
+    cin >> index;
+    cin.ignore(100, '\n');
+    cout << endl;
+
+    if(index < size && index > -1)
+    {
+        for(int i = index; i < size; i++)
+        {
+            list[i-1] = list[i];
+        }
+    }
+    size--;
+    cout << "Activity removed! " << endl;
 }
 
 //Name:   writeData()

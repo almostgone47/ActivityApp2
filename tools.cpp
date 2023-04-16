@@ -149,14 +149,14 @@ void executeCmd(char userInput, ActivityList &activityList)
         case 'd':
             activityList.searchActivitiesByType();
             break;
-//        case 'e':
-//            showActivities(activityList, numActivities);
-//            removeActivity(activityList, numActivities);
-//            showActivities(activityList, numActivities);
-//            break;
-//        case 'f':
-//            searchActivitiesByName(activityList, numActivities);
-//            break;
+        case 'e':
+            activityList.showActivities();
+            activityList.removeActivity();
+            activityList.showActivities();
+            break;
+        case 'f':
+            activityList.searchActivitiesByName();
+            break;
         case 'q':
             break;
         default:
