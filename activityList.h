@@ -18,13 +18,14 @@ public:
     ~ActivityList();
 
     void addActivity(const Activity &activity);
-//    void incNumActivities();
     int getNumActivities();
     void showActivities();
     void searchActivitiesByLocation();
+    void searchActivitiesByType();
+    void searchActivitiesByName();
     void loadData(std::ifstream &inFile);
 //
-//    void searchActivitiesByType(const Activity activities[], int numActivities);
+//    void incNumActivities();
 //    void searchActivitiesByName(const Activity activities[], int numActivities);
 //    void removeActivity(Activity activities[], int &numActivities);
 //    void addActivity(Activity activities[], int &numActivities, const Activity &activity);

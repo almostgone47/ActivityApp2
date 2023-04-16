@@ -146,9 +146,9 @@ void executeCmd(char userInput, ActivityList &activityList)
         case 'c':
             activityList.searchActivitiesByLocation();
             break;
-//        case 'd':
-//            searchActivitiesByType(activityList, numActivities);
-//            break;
+        case 'd':
+            activityList.searchActivitiesByType();
+            break;
 //        case 'e':
 //            showActivities(activityList, numActivities);
 //            removeActivity(activityList, numActivities);

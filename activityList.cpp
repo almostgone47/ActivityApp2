@@ -82,6 +82,29 @@ void ActivityList::searchActivitiesByLocation() {
     }
 }
 
+//Name:   searchActivitiesByType()
+//Desc:   Asks user for type of activity to search for and prints all activities that match
+//        the input string.
+//input:  array holding all activities currently in memory, number of activities in memory
+//output: All activities matching search.
+//return: none
+void ActivityList::searchActivitiesByType() {
+    char letter;
+    Activity::Type tempType;
+    cout << "Enter Type number(0-Athletic, 1-Food, 2-Arts, 3-Games, 4-Other): ";
+    cin >> letter;
+
+    tempType = readType(letter);
+    for(int i = 0; i < size; i++)
+    {
+        Activity::Type type = list[i].getType();
+        if(type == tempType)
+        {
+            list[i].printActivity();
+        }
+    }
+}
+
 //Name:   writeData()
 //Desc:   Uses ofstream to write data from local file.
 //input:  outFile to write to, all current activities in memory, number of activities
