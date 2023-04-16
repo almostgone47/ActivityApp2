@@ -1,6 +1,6 @@
 /******************************************************************************
 # Author:           Jeremiah Barro
-# Assignment:       Assignment 1, Structs Review Assignment
+# Assignment:       Assignment 1, Classes Assignment
 # Date:             April 16th, 2023
 # Description:      This is a console app that allows users to create, read
                     and destroy Activities which are read and stored to a local
@@ -14,7 +14,6 @@
 #include "activityList.h"
 #include "activity.h"
 #include "tools.h"
-#include "main.h"
 
 //Name:   main()
 //Desc:   This the entry point to the application.
