@@ -5,6 +5,7 @@
 #ifndef CS162CLASSES_ACTIVITYLIST_H
 #define CS162CLASSES_ACTIVITYLIST_H
 #include "activity.h"
+using namespace std;
 
 const int CAP = 30;
 
@@ -23,19 +24,8 @@ public:
     void searchActivitiesByLocation();
     void searchActivitiesByType();
     void searchActivitiesByName();
-    void loadData(std::ifstream &inFile);
+    void loadData(ifstream &inFile);
     void removeActivity();
-//
-//    void incNumActivities();
-//    void searchActivitiesByName(const Activity activities[], int numActivities);
-//    void removeActivity(Activity activities[], int &numActivities);
-//    void addActivity(Activity activities[], int &numActivities, const Activity &activity);
-//
-//    void displayActivityMenu();
-//    char getUserInput();
-//    int readInt();
-//    Activity::Type readType(char num);
-//    void loadData(std::ifstream &inFile);
-//    void writeData(std::ofstream &outFile);
+    void writeData(char fileName[]);
 };
 #endif //CS162CLASSES_ACTIVITYLIST_H

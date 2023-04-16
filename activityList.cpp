@@ -170,14 +170,25 @@ void ActivityList::removeActivity() {
 //input:  outFile to write to, all current activities in memory, number of activities
 //output: A small response showing user has saved data.
 //return: none
-//void ActivityList::writeData(ofstream &outFile) {
-//    for(int i = 0; i < size; i++)
-//    {
-//        outFile << list[i].printActivity() << endl;
-//    }
-//    outFile.close();
-//    cout << "Activities written to file! Thank you for using my program!! " << endl;
-//}
+void ActivityList::writeData(char fileName[]) {
+    ofstream outFile;
+    openFile(fileName, outFile);
+    char tempName[MAXCHAR], tempLocation[MAXCHAR], tempLevel[MAXCHAR];
+    int tempRating;
+    Activity::Type tempType;
+
+    for(int i = 0; i < size; i++)
+    {
+        list[i].getName(tempName);
+        list[i].getLocation(tempLocation);
+        list[i].getLevel(tempLevel);
+        tempRating = list[i].getRating();
+        tempType = list[i].getType();
+        outFile << tempName << ";" << tempLocation << ";" << tempLevel << ";" << tempRating << ";" << tempType << endl;
+    }
+    outFile.close();
+    cout << "Activities written to file! Thank you for using my program!! " << endl;
+}
 
 //Name:   loadData()
 //Desc:   Uses ifstream to read data from local file.

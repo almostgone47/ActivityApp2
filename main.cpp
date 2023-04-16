@@ -35,7 +35,8 @@ int main() {
         executeCmd(userInput, activityList);
 
     } while (tolower(userInput != 'q'));
-//    openFile(fileName, outFile);
-//    writeData(activities, numActivities, outFile);
+
+    activityList.writeData(fileName);
+
     return 0;
 }
