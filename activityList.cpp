@@ -84,16 +84,14 @@ void ActivityList::showActivities() {
 //return: none
 void ActivityList::searchActivitiesByLocation() {
     char searchLocation[MAXCHAR];
-    char tempLocation[MAXCHAR];
-    cout << "Enter location name: ";
-    cin.get(searchLocation, MAXCHAR, '\n');
-    cout << endl;
+    getUserInputChar("Enter location name: ", searchLocation);
+    char storedLocation[MAXCHAR];
 
     bool activityFound = false;
     for(int i = 0; i < size; i++)
     {
-        list[i].getLocation(tempLocation);
-        if(strstr(searchLocation, tempLocation) != NULL)
+        list[i].getLocation(storedLocation);
+        if(strstr(searchLocation, storedLocation) != NULL)
         {
             activityFound = true;
             list[i].printActivity();
@@ -112,13 +110,12 @@ void ActivityList::searchActivitiesByLocation() {
 //output: All activities matching search.
 //return: none
 void ActivityList::searchActivitiesByType() {
-    char letter;
-    Activity::Type tempType;
     cout << "Enter Type number(0-Athletic, 1-Food, 2-Arts, 3-Games, 4-Other): ";
+    char letter;
     cin >> letter;
+    Activity::Type tempType = readType(letter);
 
     bool activityFound = false;
-    tempType = readType(letter);
     for(int i = 0; i < size; i++)
     {
         Activity::Type type = list[i].getType();
@@ -142,10 +139,8 @@ void ActivityList::searchActivitiesByType() {
 //return: none
 void ActivityList::searchActivitiesByName() {
     char searchName[MAXCHAR];
+    getUserInputChar("Enter the activity name (50 characters or less): ", searchName);
     char activityName[MAXCHAR];
-    cout << "Enter the activity name (50 characters or less): ";
-    cin.get(searchName, MAXCHAR, '\n');
-    cout << endl;
 
     bool activityFound = false;
     for(int i = 0; i < size; i++)
@@ -169,11 +164,7 @@ void ActivityList::searchActivitiesByName() {
 //output: none
 //return: none
 void ActivityList::removeActivity() {
-    int index;
-    cout << "Pick the index to remove: ";
-    cin >> index;
-    cin.ignore(100, '\n');
-    cout << endl;
+    int index = getIndexFromUser("Pick the index to remove: ");
 
     if(index < size && index > -1)
     {
@@ -235,7 +226,7 @@ void ActivityList::loadData(ifstream &inFile)
         inFile >> tempRating;
         inFile.ignore(MAXCHAR, ';');
         inFile.get(tempType2, 2, ';');
-        // showing int char in tempType, not a string, need to change the comparison
+
         if(strcmp(tempType2, "0") == 0)
         {
             tempType = Activity::athletic;

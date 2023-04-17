@@ -25,5 +25,7 @@ void openFile(char fileName[], ifstream &inFile);
 Activity::Type readType(char num);
 void openFile(char fileName[], ofstream &outFile);
 void addActivity(Activity &activity);
+void getUserInputChar(char prompt[MAXCHAR], char *dest);
+int getIndexFromUser(char prompt[MAXCHAR]);
 
 #endif //CS162CLASSES_MAIN_H

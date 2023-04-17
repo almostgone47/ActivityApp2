@@ -3,4 +3,4 @@ project(CS162Classes)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(CS162Classes main.cpp activity.h main.h activityList.h tools.cpp tools.h activityList.cpp activity.cpp)
+add_executable(CS162Classes main.cpp activity.h main.h activityList.h activityList.cpp activity.cpp)

@@ -98,6 +98,33 @@ char getUserInput()
     return input;
 }
 
+//Name:   getIndexFromUser()
+//Desc:   Helper function for prompting and returning an index from user input.
+//input:  A number for the index the user would like to use.
+//output: A prompt passed as an argument.
+//return: An integer.
+int getIndexFromUser(char prompt[MAXCHAR]) {
+    int index;
+    cout << prompt;
+    cin >> index;
+    cin.ignore(100, '\n');
+    cout << endl;
+    return index;
+}
+
+//Name:   getUserInputChar()
+//Desc:   Helper function for prompting and returning a char array from user input.
+//input:  A destination to store input in and a text prompt for the user to see.
+//output: A prompt passed as an argument.
+//return: An char array.
+void getUserInputChar(char prompt[MAXCHAR], char *dest) {
+    char temp[MAXCHAR];
+    cout << prompt;
+    cin.get(temp, MAXCHAR, '\n');
+    cout << endl;
+    strcpy(dest, temp);
+}
+
 //Name:   addActivity()
 //Desc:   Collects data from user to create a new activity.
 //input:  reference to activity bing created.
