@@ -9,8 +9,21 @@
 # Output:           Outputs results to screen and writes to local file.
 # Sources:          N/A
 #*****************************************************************************/
-
 #ifndef CS162CLASSES_MAIN_H
 #define CS162CLASSES_MAIN_H
+#include <iostream>
+#include "activity.h"
+#include "activityList.h"
+
+using namespace std;
+
+// function prototypes
+void displayActivityMenu();
+char getUserInput();
+void executeCmd(char userInput, ActivityList &activityList);
+void openFile(char fileName[], ifstream &inFile);
+Activity::Type readType(char num);
+void openFile(char fileName[], ofstream &outFile);
+void addActivity(Activity &activity);
 
 #endif //CS162CLASSES_MAIN_H

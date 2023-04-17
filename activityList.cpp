@@ -13,14 +13,24 @@
 #include <fstream>
 #include "activityList.h"
 #include "activity.h"
-#include "tools.h"
+#include "main.h"
 
 using namespace std;
 
+//Name:   ActivityList()
+//Desc:   Constructor for ActivityList class.
+//input:  none.
+//output: none
+//return: none
 ActivityList::ActivityList() {
     size = 0;
 }
 
+//Name:   ActivityList()
+//Desc:   Constructor for ActivityList class.
+//input:  none.
+//output: none
+//return: none
 ActivityList::ActivityList(char fileName[]) {
     size = 0;
     ifstream inFile;
@@ -28,7 +38,11 @@ ActivityList::ActivityList(char fileName[]) {
     loadData(inFile);
 }
 
-//destructor
+//Name:   ~ActivityList()
+//Desc:   Destructor for ActivityList class.
+//input:  none.
+//output: none
+//return: none
 ActivityList::~ActivityList()
 {
 }
