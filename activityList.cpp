@@ -51,14 +51,23 @@ int ActivityList::getNumActivities() {
     return size;
 }
 
+//Name:   getInsertionPoint()
+//Desc:   Searches list to find index where first char in current activity is less than first char of name
+//        of activity passed in.
+//output: none
+//return: int plus one for the index to insert the activity at in list.
 int ActivityList::getInsertionPoint(char *tempName, char *insertName) {
     int i;
-    for (i = size - 1; tempName[0] >= insertName[0] && i >= 0; i--) {
-        list[i].getName(tempName);
+    for (i = size - 1; tempName[0] >= insertName[0]; i--) {
+        if (i >= 0) {
+            list[i - 1].getName(tempName);
+        }
         list[i + 1] = list[i];
     }
+
     return i + 1;
 }
+
 //Name:   addActivity()
 //Desc:   Adds ref to newly created activity to array of all activities in memory.
 //input:  array holding all activities currently in memory, number of activities in memory,
