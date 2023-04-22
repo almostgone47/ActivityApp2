@@ -22,7 +22,7 @@ public:
     void setLevel(char *newLevel);
     void setRating(int newRating);
     void setType(Type newType);
-    void getName(char *returnName);
+    void getName(char *returnName) const;
     void getLocation(char *returnLocation);
     void getLevel(char *returnLevel);
     int getRating();

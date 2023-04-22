@@ -55,12 +55,6 @@ build CMakeFiles/CS162Classes.dir/main.cpp.o: CXX_COMPILER__CS162Classes_Debug /
   OBJECT_DIR = CMakeFiles/CS162Classes.dir
   OBJECT_FILE_DIR = CMakeFiles/CS162Classes.dir
 
-build CMakeFiles/CS162Classes.dir/tools.cpp.o: CXX_COMPILER__CS162Classes_Debug /Users/jeremiah/CLionProjects/CS162Classes/tools.cpp || cmake_object_order_depends_target_CS162Classes
-  DEP_FILE = CMakeFiles/CS162Classes.dir/tools.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
-  OBJECT_DIR = CMakeFiles/CS162Classes.dir
-  OBJECT_FILE_DIR = CMakeFiles/CS162Classes.dir
-
 build CMakeFiles/CS162Classes.dir/activityList.cpp.o: CXX_COMPILER__CS162Classes_Debug /Users/jeremiah/CLionProjects/CS162Classes/activityList.cpp || cmake_object_order_depends_target_CS162Classes
   DEP_FILE = CMakeFiles/CS162Classes.dir/activityList.cpp.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
@@ -81,7 +75,7 @@ build CMakeFiles/CS162Classes.dir/activity.cpp.o: CXX_COMPILER__CS162Classes_Deb
 #############################################
 # Link the executable CS162Classes
 
-build CS162Classes: CXX_EXECUTABLE_LINKER__CS162Classes_Debug CMakeFiles/CS162Classes.dir/main.cpp.o CMakeFiles/CS162Classes.dir/tools.cpp.o CMakeFiles/CS162Classes.dir/activityList.cpp.o CMakeFiles/CS162Classes.dir/activity.cpp.o
+build CS162Classes: CXX_EXECUTABLE_LINKER__CS162Classes_Debug CMakeFiles/CS162Classes.dir/main.cpp.o CMakeFiles/CS162Classes.dir/activityList.cpp.o CMakeFiles/CS162Classes.dir/activity.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
   OBJECT_DIR = CMakeFiles/CS162Classes.dir
   POST_BUILD = :

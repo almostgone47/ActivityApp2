@@ -51,6 +51,14 @@ int ActivityList::getNumActivities() {
     return size;
 }
 
+int ActivityList::getInsertionPoint(char *tempName, char *insertName) {
+    int i;
+    for (i = size - 1; tempName[0] >= insertName[0] && i >= 0; i--) {
+        list[i].getName(tempName);
+        list[i + 1] = list[i];
+    }
+    return i + 1;
+}
 //Name:   addActivity()
 //Desc:   Adds ref to newly created activity to array of all activities in memory.
 //input:  array holding all activities currently in memory, number of activities in memory,
@@ -58,7 +66,23 @@ int ActivityList::getNumActivities() {
 //output: none
 //return: none
 void ActivityList::addActivity(const Activity &activity) {
-    list[size++] = activity;
+    char insertName[MAXCHAR];
+    char tempName[MAXCHAR];
+
+    activity.getName(insertName);
+    list[size-1].getName(tempName);
+
+    if (size == 0) {
+        list[0] = activity;
+    }
+    else if (tempName[0] >= insertName[0]) {
+        int index = getInsertionPoint(tempName, insertName);
+        list[index] = activity;
+    }
+    else {
+        list[size] = activity;
+    }
+    size++;
 }
 
 //Name:   showActivities()

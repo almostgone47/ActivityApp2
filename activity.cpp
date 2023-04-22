@@ -65,7 +65,7 @@ void Activity::setType(Type newType) {
 //input:  A ref to a variable to copy the value held at the name property.
 //output: none
 //return: none
-void Activity::getName(char *returnName) {
+void Activity::getName(char *returnName) const {
     strcpy(returnName, name);
 };
 

@@ -35,5 +35,7 @@ public:
     void loadData(ifstream &inFile);
     void removeActivity();
     void writeData(char fileName[]);
+
+    int getInsertionPoint(char *tempName, char *insertName);
 };
 #endif //CS162CLASSES_ACTIVITYLIST_H
