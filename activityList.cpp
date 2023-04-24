@@ -47,7 +47,7 @@ ActivityList::~ActivityList()
 {
 }
 
-int ActivityList::getNumActivities() {
+int ActivityList::getNumActivities() const {
     return size;
 }
 
@@ -144,8 +144,7 @@ void ActivityList::searchActivitiesByLocation() {
 //return: none
 void ActivityList::searchActivitiesByType() {
     cout << "Enter Type number(0-Athletic, 1-Food, 2-Arts, 3-Games, 4-Other): ";
-    char letter;
-    cin >> letter;
+    char letter = getUserInput();
     Activity::Type tempType = readType(letter);
 
     bool activityFound = false;
