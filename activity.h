@@ -23,10 +23,10 @@ public:
     void setRating(int newRating);
     void setType(Type newType);
     void getName(char *returnName) const;
-    void getLocation(char *returnLocation);
-    void getLevel(char *returnLevel);
-    int getRating();
-    Type getType();
+    void getLocation(char *returnLocation) const;
+    void getLevel(char *returnLevel) const;
+    int getRating() const;
+    Type getType() const;
     void printActivity();
 
 private:

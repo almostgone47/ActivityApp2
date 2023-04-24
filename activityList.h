@@ -26,8 +26,8 @@ public:
     ActivityList(char []);
     ~ActivityList();
 
-    void addActivity(const Activity &activity);
-    int getNumActivities();
+    void addActivity(const Activity &activity) const;
+    int getNumActivities() const;
     void showActivities();
     void searchActivitiesByLocation();
     void searchActivitiesByType();
@@ -35,7 +35,6 @@ public:
     void loadData(ifstream &inFile);
     void removeActivity();
     void writeData(char fileName[]);
-
-    int getInsertionPoint(char *tempName, char *insertName);
+    int getInsertionPoint(char *tempName, char *insertName) const;
 };
 #endif //CS162CLASSES_ACTIVITYLIST_H
