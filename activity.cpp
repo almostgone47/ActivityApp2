@@ -1,14 +1,14 @@
-/******************************************************************************
+/***********************************************************************************
 # Author:           Jeremiah Barro
-# Assignment:       Assignment 1, Classes Assignment
-# Date:             April 16th, 2023
+# Assignment:       Assignment 2, Dynamic Variables and Memory Management Assignment
+# Date:             May 5th, 2023
 # Description:      This is a console app that allows users to create, read
                     and destroy Activities which are read and stored to a local
                     file.
 # Input:            String input through console and a file input for storage.
 # Output:           Outputs results to screen and writes to local file.
 # Sources:          N/A
-#*****************************************************************************/
+#***********************************************************************************/
 #include <cstring>
 #include <iostream>
 #include "activity.h"
@@ -74,7 +74,7 @@ void Activity::getName(char *returnName) const {
 //input:  A ref to a variable to copy the value held at the location property.
 //output: none
 //return: none
-void Activity::getLocation(char *returnLocation) {
+void Activity::getLocation(char *returnLocation) const {
     strcpy(returnLocation, location);
 };
 
@@ -83,7 +83,7 @@ void Activity::getLocation(char *returnLocation) {
 //input:  none
 //output: none
 //return: none
-void Activity::getLevel(char *returnLevel) {
+void Activity::getLevel(char *returnLevel) const {
     strcpy(returnLevel, level);
 };
 
@@ -92,7 +92,7 @@ void Activity::getLevel(char *returnLevel) {
 //input:  none
 //output: none
 //return: An integer representing the rating of an activity.
-int Activity::getRating() {
+int Activity::getRating() const {
     return rating;
 };
 
@@ -101,7 +101,7 @@ int Activity::getRating() {
 //input:  none
 //output: none
 //return: Enum Type
-Activity::Type Activity::getType() {
+Activity::Type Activity::getType() const {
     return type;
 };
 

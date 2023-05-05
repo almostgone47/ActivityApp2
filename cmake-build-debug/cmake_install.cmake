@@ -1,4 +1,4 @@
-# Install script for directory: /Users/jeremiah/CLionProjects/CS162Classes
+# Install script for directory: /Users/jeremiah/CLionProjects/CS162DynamicVariablesAndMemoryManagement
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/jeremiah/CLionProjects/CS162Classes/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/jeremiah/CLionProjects/CS162DynamicVariablesAndMemoryManagement/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

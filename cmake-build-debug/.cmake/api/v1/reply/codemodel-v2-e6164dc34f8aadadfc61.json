@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/jeremiah/CLionProjects/CS162Classes/cmake-build-debug",
-		"source" : "/Users/jeremiah/CLionProjects/CS162Classes"
+		"build" : "/Users/jeremiah/CLionProjects/CS162DynamicVariablesAndMemoryManagement/cmake-build-debug",
+		"source" : "/Users/jeremiah/CLionProjects/CS162DynamicVariablesAndMemoryManagement"
 	},
 	"version" : 
 	{
